@@ -15,7 +15,14 @@ namespace Kalkulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Text += button1.Text;
+            if (textBox2.Text.Contains(button1.Text)) { 
+            
+            }
+            else
+            {
+                textBox2.Text += button1.Text;
+            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
