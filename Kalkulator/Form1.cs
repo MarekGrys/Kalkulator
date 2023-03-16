@@ -202,6 +202,7 @@ namespace Kalkulator
             button13.Enabled = !pomoc_wynik;
             button14.Enabled = !pomoc_wynik;
             button15.Enabled = !pomoc_wynik;
+            button20.Enabled = !pomoc_wynik;
         }
 
         private void button19_Click(object sender, EventArgs e)
