@@ -2,7 +2,11 @@ namespace Kalkulator
 {
     public partial class Form1 : Form
     {
-        string y = "";
+        double x = 0;
+        double y = 0;
+        double wynik = 0;
+        int zmienna = 0;
+        bool pomoc_wynik = false;
 
         public Form1()
         {
@@ -36,7 +40,7 @@ namespace Kalkulator
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
-            if(string.IsNullOrEmpty(textBox2.Text))
+            if (string.IsNullOrEmpty(textBox2.Text))
             {
                 textBox2.Text = "0";
             }
@@ -44,7 +48,7 @@ namespace Kalkulator
             {
                 textBox2.Text = textBox2.Text.Substring(1);
             }
-            
+
 
         }
 
@@ -95,20 +99,50 @@ namespace Kalkulator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            y = textBox2.Text;
-            textBox2.Clear();
-            MessageBox.Show(y);
+            if (pomoc_wynik == false)
+            {
+                y = Double.Parse(textBox2.Text);
+                pomoc_wynik = true;
+            }
+
+            if (zmienna == 1)
+            {
+                x = x + y;
+                textBox2.Text = x.ToString();
+            }
+            if (zmienna == 2)
+            {
+                x = x - y;
+                textBox2.Text = x.ToString();
+            }
+            if (zmienna == 3)
+            {
+                x = x * y;
+                textBox2.Text = x.ToString();
+            }
+            if (zmienna == 4)
+            {
+                x = x / y;
+                textBox2.Text = x.ToString();
+            }
+            blokada();
+
+
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-
+            double z = -1 * Double.Parse(textBox2.Text);
+            textBox2.Text = z.ToString();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
-            y = "";
+            y = 0;
+            x = 0;
+            pomoc_wynik = false;
+            blokada();
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -119,13 +153,62 @@ namespace Kalkulator
             }
 
         }
-        private static string wyswietl(string text)
+
+        private void button16_Click(object sender, EventArgs e)
         {
-            if (text.Count()!=0 && text[0]=='0')
-            {
-                return text.Substring(1);
-            }
-            return text;
+            zmienna = 1;
+            x = Double.Parse(textBox2.Text);
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            zmienna = 2;
+            x = Double.Parse(textBox2.Text);
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            zmienna = 3;
+            x = Double.Parse(textBox2.Text);
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            zmienna = 4;
+            x = Double.Parse(textBox2.Text);
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
+        }
+        private void blokada()
+        {
+            button5.Enabled = !pomoc_wynik;
+            button2.Enabled = !pomoc_wynik;
+            button1.Enabled = !pomoc_wynik;
+            button6.Enabled = !pomoc_wynik;
+            button7.Enabled = !pomoc_wynik;
+            button9.Enabled = !pomoc_wynik;
+            button10.Enabled = !pomoc_wynik;
+            button11.Enabled = !pomoc_wynik;
+            button13.Enabled = !pomoc_wynik;
+            button14.Enabled = !pomoc_wynik;
+            button15.Enabled = !pomoc_wynik;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
         }
     }
 }

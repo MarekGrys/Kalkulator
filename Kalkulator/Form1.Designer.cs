@@ -59,7 +59,7 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 75);
             button1.TabIndex = 0;
-            button1.Text = ".";
+            button1.Text = ",";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -94,6 +94,7 @@
             button4.TabIndex = 3;
             button4.Text = "/";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -137,6 +138,7 @@
             button8.TabIndex = 7;
             button8.Text = "*";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -180,6 +182,7 @@
             button12.TabIndex = 11;
             button12.Text = "-";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button13
             // 
@@ -223,6 +226,7 @@
             button16.TabIndex = 15;
             button16.Text = "+";
             button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
             // 
             // textBox1
             // 
@@ -276,6 +280,7 @@
             button19.TabIndex = 20;
             button19.Text = "CE";
             button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // button20
             // 
