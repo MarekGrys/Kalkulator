@@ -241,6 +241,7 @@
             textBox2.RightToLeft = RightToLeft.No;
             textBox2.Size = new Size(423, 61);
             textBox2.TabIndex = 17;
+            textBox2.Text = "0";
             textBox2.TextAlign = HorizontalAlignment.Right;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -285,6 +286,7 @@
             button20.TabIndex = 21;
             button20.Text = "<";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
             // 
             // Form1
             // 

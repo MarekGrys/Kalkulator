@@ -3,9 +3,11 @@ namespace Kalkulator
     public partial class Form1 : Form
     {
         string y = "";
+
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -15,14 +17,15 @@ namespace Kalkulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Contains(button1.Text)) { 
-            
+            if (textBox2.Text.Contains(button1.Text))
+            {
+
             }
             else
             {
                 textBox2.Text += button1.Text;
             }
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -32,6 +35,16 @@ namespace Kalkulator
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+            if(string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Text = "0";
+            }
+            if (textBox2.Text.Length == 2 && textBox2.Text[0] == '0')
+            {
+                textBox2.Text = textBox2.Text.Substring(1);
+            }
+            
 
         }
 
@@ -96,6 +109,23 @@ namespace Kalkulator
         {
             textBox2.Clear();
             y = "";
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text.Length > 0)
+            {
+                textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+            }
+
+        }
+        private static string wyswietl(string text)
+        {
+            if (text.Count()!=0 && text[0]=='0')
+            {
+                return text.Substring(1);
+            }
+            return text;
         }
     }
 }
