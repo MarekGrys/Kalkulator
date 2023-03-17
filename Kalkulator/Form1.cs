@@ -8,7 +8,7 @@ namespace Kalkulator
         int zmienna = 0;
         bool pomoc_wynik = false;
         bool pomoc_zmienna = false;
-        
+        bool limit = false;
 
         public Form1()
         {
@@ -19,6 +19,7 @@ namespace Kalkulator
         private void button13_Click(object sender, EventArgs e)
         {
             textBox2.Text += button13.Text;
+            blokada_ilosc();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Kalkulator
             {
                 textBox2.Text += button1.Text;
             }
+            blokada_ilosc();
 
         }
 
@@ -57,46 +59,55 @@ namespace Kalkulator
         private void button14_Click(object sender, EventArgs e)
         {
             textBox2.Text += button14.Text;
+            blokada_ilosc();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
             textBox2.Text += button15.Text;
+            blokada_ilosc();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             textBox2.Text += button9.Text;
+            blokada_ilosc();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             textBox2.Text += button10.Text;
+            blokada_ilosc();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             textBox2.Text += button11.Text;
+            blokada_ilosc();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             textBox2.Text += button5.Text;
+            blokada_ilosc();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             textBox2.Text += button6.Text;
+            blokada_ilosc();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             textBox2.Text += button7.Text;
+            blokada_ilosc();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             textBox2.Text += button2.Text;
+            blokada_ilosc();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -145,6 +156,7 @@ namespace Kalkulator
             y = 0;
             x = 0;
             pomoc_wynik = false;
+            pomoc_zmienna = false;
             blokada();
         }
 
@@ -154,18 +166,19 @@ namespace Kalkulator
             {
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
             }
+            blokada_ilosc();
 
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             zmienna = 1;
-            if(pomoc_zmienna == false)
+            if (pomoc_zmienna == false)
             {
                 x = Double.Parse(textBox2.Text);
                 pomoc_zmienna = true;
             }
-            
+
             textBox2.Clear();
             pomoc_wynik = false;
             blokada();
@@ -223,6 +236,37 @@ namespace Kalkulator
             button14.Enabled = !pomoc_wynik;
             button15.Enabled = !pomoc_wynik;
             button20.Enabled = !pomoc_wynik;
+        }
+        private void blokada_ilosc()
+        {
+            if(textBox2.Text.Length >= textBox2.MaxLength)
+            {
+                button5.Enabled = false;
+                button2.Enabled = false;
+                button1.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+                button9.Enabled = false;
+                button10.Enabled = false;
+                button11.Enabled = false;
+                button13.Enabled = false;
+                button14.Enabled = false;
+                button15.Enabled = false;   
+            }
+            else
+            {
+                button5.Enabled = true;
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button9.Enabled = true;
+                button10.Enabled = true;
+                button11.Enabled = true;
+                button13.Enabled = true;
+                button14.Enabled = true;
+                button15.Enabled = true;
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
