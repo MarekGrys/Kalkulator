@@ -140,14 +140,18 @@ namespace Kalkulator
             }
             blokada();
             pomoc_zmienna = false;
-
+            
 
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            double z = -1 * Double.Parse(textBox2.Text);
-            textBox2.Text = z.ToString();
+
+            if (textBox2.Text != "0")
+            {
+                double z = -1 * Double.Parse(textBox2.Text);
+                textBox2.Text = z.ToString();
+            }
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -239,7 +243,7 @@ namespace Kalkulator
         }
         private void blokada_ilosc()
         {
-            if(textBox2.Text.Length >= textBox2.MaxLength)
+            if (textBox2.Text.Length >= textBox2.MaxLength)
             {
                 button5.Enabled = false;
                 button2.Enabled = false;
@@ -251,7 +255,7 @@ namespace Kalkulator
                 button11.Enabled = false;
                 button13.Enabled = false;
                 button14.Enabled = false;
-                button15.Enabled = false;   
+                button15.Enabled = false;
             }
             else
             {

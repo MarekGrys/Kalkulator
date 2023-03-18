@@ -321,7 +321,10 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            MaximumSize = new Size(459, 503);
+            MinimumSize = new Size(459, 503);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
