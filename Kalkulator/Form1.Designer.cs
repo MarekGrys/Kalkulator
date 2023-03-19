@@ -44,7 +44,6 @@
             button14 = new Button();
             button15 = new Button();
             button16 = new Button();
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
             button17 = new Button();
             button18 = new Button();
@@ -228,14 +227,6 @@
             button16.UseVisualStyleBackColor = true;
             button16.Click += button16_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(2, 23);
-            textBox1.TabIndex = 16;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
@@ -304,7 +295,6 @@
             Controls.Add(button18);
             Controls.Add(button17);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(button16);
             Controls.Add(button15);
             Controls.Add(button14);
@@ -348,7 +338,6 @@
         private Button button14;
         private Button button15;
         private Button button16;
-        private TextBox textBox1;
         private TextBox textBox2;
         private Button button17;
         private Button button18;

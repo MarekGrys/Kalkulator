@@ -2,6 +2,7 @@ namespace Kalkulator
 {
     public partial class Form1 : Form
     {
+        #region variables
         double x = 0;
         double y = 0;
         double wynik = 0;
@@ -9,7 +10,7 @@ namespace Kalkulator
         bool pomoc_wynik = false;
         bool pomoc_zmienna = false;
         bool limit = false;
-
+        #endregion
         public Form1()
         {
             InitializeComponent();
@@ -27,11 +28,6 @@ namespace Kalkulator
                 textBox2.Text += button1.Text;
             }
             blokada_ilosc();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -109,7 +105,7 @@ namespace Kalkulator
             }
             blokada_ilosc();
         }
-
+        #region action_buttons
         private void button16_Click(object sender, EventArgs e)
         {
             zmienna = 1;
@@ -162,6 +158,8 @@ namespace Kalkulator
             pomoc_wynik = false;
             blokada();
         }
+        #endregion
+        #region blockades
         private void blokada()
         {
             button5.Enabled = !pomoc_wynik;
@@ -208,7 +206,7 @@ namespace Kalkulator
                 button15.Enabled = true;
             }
         }
-      
+        #endregion
         private void button19_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
