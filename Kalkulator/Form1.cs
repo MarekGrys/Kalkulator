@@ -16,12 +16,6 @@ namespace Kalkulator
 
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button13.Text;
-            blokada_ilosc();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox2.Text.Contains(button1.Text))
@@ -33,7 +27,6 @@ namespace Kalkulator
                 textBox2.Text += button1.Text;
             }
             blokada_ilosc();
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -54,60 +47,6 @@ namespace Kalkulator
             }
 
 
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button14.Text;
-            blokada_ilosc();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button15.Text;
-            blokada_ilosc();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button9.Text;
-            blokada_ilosc();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button10.Text;
-            blokada_ilosc();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button11.Text;
-            blokada_ilosc();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button5.Text;
-            blokada_ilosc();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button6.Text;
-            blokada_ilosc();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button7.Text;
-            blokada_ilosc();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox2.Text += button2.Text;
-            blokada_ilosc();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -140,8 +79,6 @@ namespace Kalkulator
             }
             blokada();
             pomoc_zmienna = false;
-            
-
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -171,7 +108,6 @@ namespace Kalkulator
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
             }
             blokada_ilosc();
-
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -272,12 +208,19 @@ namespace Kalkulator
                 button15.Enabled = true;
             }
         }
-
+      
         private void button19_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
             pomoc_wynik = false;
             blokada();
+        }
+
+        private void Numeric_Click(object sender, EventArgs e)
+        {
+            var numerki = (Button)sender;
+            textBox2.Text += numerki.Text;
+            blokada_ilosc();
         }
     }
 }
