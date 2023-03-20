@@ -1,3 +1,6 @@
+
+using System.Globalization;
+
 namespace Kalkulator
 {
     public partial class Form1 : Form
@@ -14,7 +17,18 @@ namespace Kalkulator
         public Form1()
         {
             InitializeComponent();
-
+            //var culture = new CultureInfo("en-US");
+            //CultureInfo.DefaultThreadCurrentCulture = culture;
+            //CultureInfo.DefaultThreadCurrentUICulture = culture;
+            var kultura = CultureInfo.CurrentCulture.Name;
+            if (kultura == "pl=PL")
+            {
+                button1.Text = ",";
+            }
+            else
+            {
+                button1.Text = ".";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

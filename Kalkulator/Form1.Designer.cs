@@ -87,7 +87,7 @@
             // button4
             // 
             button4.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(315, 367);
+            button4.Location = new Point(270, 367);
             button4.Name = "button4";
             button4.Size = new Size(75, 75);
             button4.TabIndex = 3;
@@ -131,7 +131,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.Location = new Point(315, 276);
+            button8.Location = new Point(270, 276);
             button8.Name = "button8";
             button8.Size = new Size(75, 75);
             button8.TabIndex = 7;
@@ -175,7 +175,7 @@
             // button12
             // 
             button12.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button12.Location = new Point(315, 186);
+            button12.Location = new Point(270, 186);
             button12.Name = "button12";
             button12.Size = new Size(75, 75);
             button12.TabIndex = 11;
@@ -219,7 +219,7 @@
             // button16
             // 
             button16.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button16.Location = new Point(315, 94);
+            button16.Location = new Point(270, 94);
             button16.Name = "button16";
             button16.Size = new Size(75, 75);
             button16.TabIndex = 15;
@@ -235,7 +235,7 @@
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
             textBox2.RightToLeft = RightToLeft.No;
-            textBox2.Size = new Size(470, 61);
+            textBox2.Size = new Size(414, 61);
             textBox2.TabIndex = 17;
             textBox2.Text = "0";
             textBox2.TextAlign = HorizontalAlignment.Right;
@@ -244,7 +244,7 @@
             // button17
             // 
             button17.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button17.Location = new Point(407, 367);
+            button17.Location = new Point(351, 367);
             button17.Name = "button17";
             button17.Size = new Size(75, 75);
             button17.TabIndex = 18;
@@ -255,7 +255,7 @@
             // button18
             // 
             button18.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button18.Location = new Point(407, 276);
+            button18.Location = new Point(351, 276);
             button18.Name = "button18";
             button18.Size = new Size(75, 75);
             button18.TabIndex = 19;
@@ -266,7 +266,7 @@
             // button19
             // 
             button19.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button19.Location = new Point(407, 186);
+            button19.Location = new Point(351, 186);
             button19.Name = "button19";
             button19.Size = new Size(75, 75);
             button19.TabIndex = 20;
@@ -277,7 +277,7 @@
             // button20
             // 
             button20.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            button20.Location = new Point(407, 94);
+            button20.Location = new Point(351, 94);
             button20.Name = "button20";
             button20.Size = new Size(75, 75);
             button20.TabIndex = 21;
@@ -289,7 +289,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 464);
+            ClientSize = new Size(432, 464);
             Controls.Add(button20);
             Controls.Add(button19);
             Controls.Add(button18);
@@ -311,8 +311,8 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            MaximumSize = new Size(501, 503);
-            MinimumSize = new Size(501, 503);
+            MaximumSize = new Size(448, 503);
+            MinimumSize = new Size(448, 503);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
