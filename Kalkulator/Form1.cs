@@ -22,7 +22,7 @@ namespace Kalkulator
             //CultureInfo.DefaultThreadCurrentCulture = culture;
             //CultureInfo.DefaultThreadCurrentUICulture = culture;
             var kultura = CultureInfo.CurrentCulture.Name;
-            if (kultura == "pl=PL")
+            if (kultura == "pl-PL")
             {
                 button1.Text = ",";
             }
@@ -41,6 +41,10 @@ namespace Kalkulator
             else
             {
                 textBox2.Text += button1.Text;
+            }
+            if (textBox2.Text == "," || textBox2.Text == ".")
+            {
+                textBox2.Text = "0"+textBox2.Text;
             }
             blokada_ilosc();
         }
@@ -120,60 +124,6 @@ namespace Kalkulator
             }
             blokada_ilosc();
         }
-        #region action_buttons
-        private void button16_Click(object sender, EventArgs e)
-        {
-            zmienna = 1;
-            if (pomoc_zmienna == false)
-            {
-                x = Double.Parse(textBox2.Text);
-                pomoc_zmienna = true;
-            }
-
-            textBox2.Clear();
-            pomoc_wynik = false;
-            blokada();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            zmienna = 2;
-            if (pomoc_zmienna == false)
-            {
-                x = Double.Parse(textBox2.Text);
-                pomoc_zmienna = true;
-            }
-            textBox2.Clear();
-            pomoc_wynik = false;
-            blokada();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            zmienna = 3;
-            if (pomoc_zmienna == false)
-            {
-                x = Double.Parse(textBox2.Text);
-                pomoc_zmienna = true;
-            }
-            textBox2.Clear();
-            pomoc_wynik = false;
-            blokada();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            zmienna = 4;
-            if (pomoc_zmienna == false)
-            {
-                x = Double.Parse(textBox2.Text);
-                pomoc_zmienna = true;
-            }
-            textBox2.Clear();
-            pomoc_wynik = false;
-            blokada();
-        }
-        #endregion
         #region blockades
         private void blokada()
         {

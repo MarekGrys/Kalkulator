@@ -231,7 +231,7 @@
             // 
             textBox2.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(12, 27);
-            textBox2.MaxLength = 18;
+            textBox2.MaxLength = 14;
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
             textBox2.RightToLeft = RightToLeft.No;
