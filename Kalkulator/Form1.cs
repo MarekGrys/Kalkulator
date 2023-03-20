@@ -13,6 +13,7 @@ namespace Kalkulator
         bool pomoc_wynik = false;
         bool pomoc_zmienna = false;
         bool limit = false;
+        string akcja = "";
         #endregion
         public Form1()
         {
@@ -67,22 +68,22 @@ namespace Kalkulator
                 pomoc_wynik = true;
             }
 
-            if (zmienna == 1)
+            if (akcja == "+")
             {
                 x = x + y;
                 textBox2.Text = x.ToString();
             }
-            if (zmienna == 2)
+            if (akcja == "-")
             {
                 x = x - y;
                 textBox2.Text = x.ToString();
             }
-            if (zmienna == 3)
+            if (akcja == "*")
             {
                 x = x * y;
                 textBox2.Text = x.ToString();
             }
-            if (zmienna == 4)
+            if (akcja == "/")
             {
                 x = x / y;
                 textBox2.Text = x.ToString();
@@ -233,6 +234,20 @@ namespace Kalkulator
             var numerki = (Button)sender;
             textBox2.Text += numerki.Text;
             blokada_ilosc();
+        }
+        private void Action_Click(object sender, EventArgs e)
+        {
+            var action = (Button)sender;
+            akcja = action.Text;
+            if (pomoc_zmienna == false)
+            {
+                x = Double.Parse(textBox2.Text);
+                pomoc_zmienna = true;
+            }
+
+            textBox2.Clear();
+            pomoc_wynik = false;
+            blokada();
         }
     }
 }

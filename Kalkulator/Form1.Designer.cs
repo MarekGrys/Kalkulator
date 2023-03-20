@@ -93,7 +93,7 @@
             button4.TabIndex = 3;
             button4.Text = "/";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button4.Click += Action_Click;
             // 
             // button5
             // 
@@ -137,7 +137,7 @@
             button8.TabIndex = 7;
             button8.Text = "*";
             button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            button8.Click += Action_Click;
             // 
             // button9
             // 
@@ -181,7 +181,7 @@
             button12.TabIndex = 11;
             button12.Text = "-";
             button12.UseVisualStyleBackColor = true;
-            button12.Click += button12_Click;
+            button12.Click += Action_Click;
             // 
             // button13
             // 
@@ -225,7 +225,7 @@
             button16.TabIndex = 15;
             button16.Text = "+";
             button16.UseVisualStyleBackColor = true;
-            button16.Click += button16_Click;
+            button16.Click += Action_Click;
             // 
             // textBox2
             // 
