@@ -107,6 +107,10 @@ namespace Kalkulator
             {
                 textBox2.Text = double.NaN.ToString();
             }
+            if (textBox2.Text == double.NaN.ToString())
+            {
+                textBox2.Text = "B£¥D!!!";
+            }
             
             pomoc_zmienna = false;
             pomoc_dzialan = false;
