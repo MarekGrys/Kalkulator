@@ -70,7 +70,7 @@ namespace Kalkulator
         {
             if (pomoc_wynik == false)
             {
-                if(textBox2.Text == ",")
+                if(textBox2.Text == "," || textBox2.Text == ".")
                 {
                     textBox2.Text = "0";
                 }
@@ -117,7 +117,7 @@ namespace Kalkulator
 
             if (textBox2.Text != "0")
             {
-                if (textBox2.Text != ",")
+                if (textBox2.Text != "," || textBox2.Text == ".")
                 {
                     double z = -1 * Double.Parse(textBox2.Text);
                     textBox2.Text = z.ToString();
@@ -226,7 +226,7 @@ namespace Kalkulator
         }
         private void obliczenia(object sender, EventArgs e)
         {
-            if (textBox2.Text == ",")
+            if (textBox2.Text == "," || textBox2.Text == ".")
             {
                 textBox2.Text = "0";
             }
