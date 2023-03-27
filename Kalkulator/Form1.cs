@@ -1,4 +1,5 @@
 
+using System.Configuration;
 using System.Globalization;
 
 namespace Kalkulator
@@ -14,6 +15,7 @@ namespace Kalkulator
         bool pomoc_zmienna = false;
         bool limit = false;
         string akcja = "";
+        bool pomoc_dzialan = false;
         #endregion
         public Form1()
         {
@@ -68,6 +70,10 @@ namespace Kalkulator
         {
             if (pomoc_wynik == false)
             {
+                if(textBox2.Text == ",")
+                {
+                    textBox2.Text = "0";
+                }
                 y = Double.Parse(textBox2.Text);
                 pomoc_wynik = true;
             }
@@ -93,7 +99,17 @@ namespace Kalkulator
                 textBox2.Text = x.ToString();
             }
             blokada();
+            if(textBox2.Text == "-0")
+            {
+                textBox2.Text = "0";
+            }
+            if(textBox2.Text == double.PositiveInfinity.ToString() || textBox2.Text == double.NegativeInfinity.ToString())
+            {
+                textBox2.Text = double.NaN.ToString();
+            }
+            
             pomoc_zmienna = false;
+            pomoc_dzialan = false;
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -101,8 +117,12 @@ namespace Kalkulator
 
             if (textBox2.Text != "0")
             {
-                double z = -1 * Double.Parse(textBox2.Text);
-                textBox2.Text = z.ToString();
+                if (textBox2.Text != ",")
+                {
+                    double z = -1 * Double.Parse(textBox2.Text);
+                    textBox2.Text = z.ToString();
+                }
+                
             }
         }
 
@@ -187,6 +207,10 @@ namespace Kalkulator
         }
         private void Action_Click(object sender, EventArgs e)
         {
+            if(pomoc_dzialan == true)
+            {
+                obliczenia(sender, e);
+            }
             var action = (Button)sender;
             akcja = action.Text;
             if (pomoc_zmienna == false)
@@ -198,6 +222,35 @@ namespace Kalkulator
             textBox2.Clear();
             pomoc_wynik = false;
             blokada();
+            pomoc_dzialan = true;
+        }
+        private void obliczenia(object sender, EventArgs e)
+        {
+            if (textBox2.Text == ",")
+            {
+                textBox2.Text = "0";
+            }
+            y = double.Parse(textBox2.Text);
+            if (akcja == "+")
+            {
+                x = x + y;
+                textBox2.Text = x.ToString();
+            }
+            if (akcja == "-")
+            {
+                x = x - y;
+                textBox2.Text = x.ToString();
+            }
+            if (akcja == "*")
+            {
+                x = x * y;
+                textBox2.Text = x.ToString();
+            }
+            if (akcja == "/")
+            {
+                x = x / y;
+                textBox2.Text = x.ToString();
+            }
         }
     }
 }
