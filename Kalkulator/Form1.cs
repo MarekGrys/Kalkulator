@@ -109,11 +109,12 @@ namespace Kalkulator
             }
             if (textBox2.Text == double.NaN.ToString())
             {
-                textBox2.Text = "B£¥D!!!";
+                textBox2.Text = "ERROR";
             }
             
             pomoc_zmienna = false;
             pomoc_dzialan = false;
+            EnableIfERROR();
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -205,12 +206,14 @@ namespace Kalkulator
 
         private void Numeric_Click(object sender, EventArgs e)
         {
+            DisposeOfERROR();
             var numerki = (Button)sender;
             textBox2.Text += numerki.Text;
             blokada_ilosc();
         }
         private void Action_Click(object sender, EventArgs e)
         {
+            DisposeOfERROR();
             if(pomoc_dzialan == true)
             {
                 obliczenia(sender, e);
@@ -254,6 +257,31 @@ namespace Kalkulator
             {
                 x = x / y;
                 textBox2.Text = x.ToString();
+            }
+        }
+        private void EnableIfERROR()
+        {
+            if (textBox2.Text == "ERROR")
+            {
+                button5.Enabled = true;
+                button2.Enabled = true;
+                button1.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button9.Enabled = true;
+                button10.Enabled = true;
+                button11.Enabled = true;
+                button13.Enabled = true;
+                button14.Enabled = true;
+                button15.Enabled = true;
+            }
+        }
+        private void DisposeOfERROR()
+        {
+            if (textBox2.Text == "ERROR")
+            {
+                button20.Enabled = true;
+                textBox2.Text = "0";
             }
         }
     }
